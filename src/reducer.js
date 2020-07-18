@@ -1,14 +1,10 @@
 export const initialState = {
-    basket: [{
-        id : 23674753,
-        title : "She's With Me (With Me (1))",
-        price : 2300,
-        rating : 5,
-        image : "https://m.media-amazon.com/images/I/81hkvZ3E5tL._AC_UL320_.jpg"
-        
-    }],
+    basket: [],
     user: null,
 }
+export const getBasketTotal = (basket) =>
+    basket?.reduce((amount, item) => item.price + amount, 0);
+
 const reducer = (state, action) => {
     
     switch(action.type) {

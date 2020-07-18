@@ -30,21 +30,21 @@ function Home() {
                 id="23674473"
                 title="Resistance Band Set, Pull Up Assist Bands - Stretch Resistance Band - Mobility Band Powerlifting Bands "
                 price={3000}
-                rating={5}
+                rating={3}
                 image="https://m.media-amazon.com/images/I/619YXOkQGCL._AC_UY218_.jpg"
             />
             <Product
                 id="23674896"
                 title="Huawei Mate SE Factory Unlocked 5.93” - 4GB/64GB Octa-core Processor| 16MP + 2MP Dual Camera| GSM Only |Grey"
                 price={28500}
-                rating={5}
-                image="https://m.media-amazon.com/images/I/811cPuY63mL._AC_UY218_.jpg"
+                rating={2}
+                image="https://m.media-amazon.com/images/I/91-lNUrBnSL._AC_UY218_.jpg"
             />
             <Product
                 id="23674753"
                 title="She's With Me (With Me (1))"
                 price={2300}
-                rating={5}
+                rating={3}
                 image="https://m.media-amazon.com/images/I/81hkvZ3E5tL._AC_UL320_.jpg"
             />
             </div>
@@ -53,7 +53,7 @@ function Home() {
                 id="23674294"
                 title="SAMSUNG 75-inch Class QLED Q80T Series - 4K UHD Direct Full Array 12X Quantum HDR 12X Smart TV with Alexa Built-in (QN75Q80TAFXZA, 2020 Model) "
                 price={140000}
-                rating={5}
+                rating={1}
                 image="https://m.media-amazon.com/images/I/61UxxNFRsRL._AC_UY218_.jpg"
             />
             </div>
