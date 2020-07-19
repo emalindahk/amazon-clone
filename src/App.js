@@ -1,35 +1,57 @@
-import React from 'react';
-import './App.css'; 
+import React, { useEffect } from "react";
+import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from './Header';
-import Home from './Home';
-import Checkout from './Checkout';
+import Header from "./Header";
+import Home from "./Home";
+import Checkout from "./Checkout";
+import Login from "./Login";
+import { useStateValue } from "./StateProvider";
+import { auth } from "./firebase";
 
 function App() {
+  const [{ user }, dispatch] = useStateValue();
+
+  //Piece of code which runs based on a given condition(useEffect)
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        //user is logged in
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        //user is logged out
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route path="/checkout">
-            <Header/>
-            <Checkout/>
+            <Header />
+            <Checkout />
           </Route>
           <Route path="/login">
-            <Header/>
-            <h1>Login</h1>
+            <Header />
+            <Login />
           </Route>
           {/*Default route */}
           <Route path="/">
             <Header />
-            <Home/>
+            <Home />
           </Route>
         </Switch>
-
       </Router>
-      
-
-    
-      
     </div>
   );
 }
